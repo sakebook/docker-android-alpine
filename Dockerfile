@@ -25,5 +25,5 @@ RUN mkdir -p $ANDROID_HOME/licenses/ && \
   mkdir ~/.android && \
   echo "count=0" > ~/.android/repositories.cfg
 
-# install android tools
+# install android tools and more
 RUN sdkmanager "tools" "build-tools;25.0.3" "platforms;android-25" "platform-tools" "extras;android;m2repository"
