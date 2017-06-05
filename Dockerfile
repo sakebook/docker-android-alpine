@@ -7,10 +7,8 @@ RUN apk update && \
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 ENV SDK_TOOL_VERSION=tools_r25.2.5-linux
-ENV SDK_PATH=/usr/local
-ENV ANDROID_HOME=$SDK_PATH/android-sdk-linux
-ENV PATH=$PATH:$ANDROID_HOME/tools
-ENV PATH=$PATH:$ANDROID_HOME/tools/bin
+ENV ANDROID_HOME=/usr/local/android-sdk-linux
+ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 
 # install android sdk
 RUN mkdir $ANDROID_HOME && \
