@@ -26,7 +26,8 @@ Path                        | Version | Description                    | Locatio
 ```
 $ git clone git@github.com:sakebook/docker-android-alpine.git
 $ cd docker-android-alpine
-$ docker build -t docker-android-alpine:latest .
+$ docker build -t docker-android-alpine:25.0.3 .
+$ docker run -it docker-android-alpine:25.0.3 /bin/sh
 ```
 
 ## Include docker images
