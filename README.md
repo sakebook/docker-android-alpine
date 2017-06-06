@@ -7,9 +7,7 @@ Android development environment on Alpine using Docker
 Path                        | Version | Description                    | Location
   -------                     | ------- | -------                        | -------
   build-tools;25.0.3          | 25.0.3  | Android SDK Build-Tools 25.0.3 | build-tools/25.0.3/
-  emulator                    | 26.0.3  | Android Emulator               | emulator/
   extras;android;m2repository | 47.0.0  | Android Support Repository     | extras/android/m2repository/
-  patcher;v4                  | 1       | SDK Patch Applier v4           | patcher/v4/
   platform-tools              | 25.0.6  | Android SDK Platform-Tools     | platform-tools/
   platforms;android-25        | 3       | Android SDK Platform 25        | platforms/android-25/
   tools                       | 26.0.2  | Android SDK Tools              | tools/
