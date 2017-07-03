@@ -8,7 +8,7 @@ Path                        | Version | Description                    | Locatio
   -------                     | ------- | -------                        | -------
   build-tools;25.0.3          | 25.0.3  | Android SDK Build-Tools 25.0.3 | build-tools/25.0.3/
   extras;android;m2repository | 47.0.0  | Android Support Repository     | extras/android/m2repository/
-  platform-tools              | 25.0.6  | Android SDK Platform-Tools     | platform-tools/
+  platform-tools              | 26.0.0  | Android SDK Platform-Tools     | platform-tools/
   platforms;android-25        | 3       | Android SDK Platform 25        | platforms/android-25/
   tools                       | 26.0.2  | Android SDK Tools              | tools/
 
@@ -19,6 +19,13 @@ Path                        | Version | Description                    | Locatio
 - OpenSSL
 - Bash
 - Git
+- Ruby
+- Bundler
+- ruby-json
+- ruby-dev
+- make
+- gcc
+- libc-dev
 
 ## Build
 ```

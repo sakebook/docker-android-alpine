@@ -1,9 +1,10 @@
-FROM frolvlad/alpine-glibc
+FROM frolvlad/alpine-glibc:alpine-3.6
 MAINTAINER Shinya Sakemoto <sakebook@gmail.com>
 
 RUN apk update && \
   apk upgrade && \
-  apk --no-cache add openjdk8 ca-certificates openssl bash git
+  apk --no-cache add openjdk8 ca-certificates openssl bash git \
+    ruby ruby-bundler ruby-json ruby-dev make gcc libc-dev
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 ENV SDK_TOOL_VERSION=tools_r25.2.5-linux
