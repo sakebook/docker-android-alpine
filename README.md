@@ -8,9 +8,9 @@ Path                        | Version | Description                    | Locatio
   -------                     | ------- | -------                        | -------
   build-tools;25.0.3          | 25.0.3  | Android SDK Build-Tools 25.0.3 | build-tools/25.0.3/
   extras;android;m2repository | 47.0.0  | Android Support Repository     | extras/android/m2repository/
-  platform-tools              | 26.0.0  | Android SDK Platform-Tools     | platform-tools/
+  platform-tools              | 26.0.1  | Android SDK Platform-Tools     | platform-tools/
   platforms;android-25        | 3       | Android SDK Platform 25        | platforms/android-25/
-  tools                       | 26.0.2  | Android SDK Tools              | tools/
+  tools                       | 26.1.1  | Android SDK Tools              | tools/
 
 ### Others
 - glibc
@@ -31,8 +31,8 @@ Path                        | Version | Description                    | Locatio
 ```
 $ git clone git@github.com:sakebook/docker-android-alpine.git
 $ cd docker-android-alpine
-$ docker build -t docker-android-alpine:25.0.3 .
-$ docker run -it docker-android-alpine:25.0.3 /bin/sh
+$ docker build -t docker-android-alpine:25.0.3_4 .
+$ docker run -it docker-android-alpine:25.0.3_4 /bin/sh
 ```
 
 ## Include docker images

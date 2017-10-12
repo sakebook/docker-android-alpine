@@ -3,8 +3,19 @@ MAINTAINER Shinya Sakemoto <sakebook@gmail.com>
 
 RUN apk update && \
   apk upgrade && \
-  apk --no-cache add openjdk8 ca-certificates openssl bash git \
-    ruby ruby-bundler ruby-json ruby-dev make gcc libc-dev
+  apk --no-cache add \
+    openjdk8 \
+    ca-certificates \
+    openssl \
+    bash \
+    git \
+    ruby \
+    ruby-bundler \
+    ruby-json \
+    ruby-dev \
+    make \
+    gcc \
+    libc-dev
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 ENV SDK_TOOL_VERSION=tools_r25.2.5-linux
@@ -19,7 +30,7 @@ RUN mkdir $ANDROID_HOME && \
 
 # prepare sdkmanager
 RUN mkdir -p $ANDROID_HOME/licenses/ && \
-  echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > $ANDROID_HOME/licenses/android-sdk-license && \
+  echo -e "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > $ANDROID_HOME/licenses/android-sdk-license && \
   echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-preview-license && \
   mkdir ~/.android && \
   echo "count=0" > ~/.android/repositories.cfg
