@@ -15,7 +15,8 @@ RUN apk update && \
     ruby-dev \
     make \
     gcc \
-    libc-dev
+    libc-dev \
+    wget
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 ENV SDK_TOOL_VERSION=tools_r25.2.5-linux
