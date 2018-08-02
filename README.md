@@ -4,13 +4,14 @@ Android development environment on Alpine using Docker
 ## Content
 ### Android
 
-Path                        | Version | Description                    | Location
+  Path                        | Version | Description                    | Location
   -------                     | ------- | -------                        | -------
-  build-tools;25.0.3          | 25.0.3  | Android SDK Build-Tools 25.0.3 | build-tools/25.0.3/
+  build-tools;27.0.3          | 27.0.3  | Android SDK Build-Tools 27.0.3 | build-tools/27.0.3/
   extras;android;m2repository | 47.0.0  | Android Support Repository     | extras/android/m2repository/
-  platform-tools              | 26.0.1  | Android SDK Platform-Tools     | platform-tools/
-  platforms;android-25        | 3       | Android SDK Platform 25        | platforms/android-25/
+  platform-tools              | 28.0.0  | Android SDK Platform-Tools     | platform-tools/
+  platforms;android-27        | 3       | Android SDK Platform 27        | platforms/android-27/
   tools                       | 26.1.1  | Android SDK Tools              | tools/
+
 
 ### Others
 - glibc
@@ -31,8 +32,8 @@ Path                        | Version | Description                    | Locatio
 ```
 $ git clone git@github.com:sakebook/docker-android-alpine.git
 $ cd docker-android-alpine
-$ docker build -t docker-android-alpine:25.0.3_4 .
-$ docker run -it docker-android-alpine:25.0.3_4 /bin/sh
+$ docker build -t docker-android-alpine:27.0.3 .
+$ docker run -it docker-android-alpine:27.0.3 /bin/sh
 ```
 
 ## Include docker images
@@ -40,7 +41,7 @@ $ docker run -it docker-android-alpine:25.0.3_4 /bin/sh
 
 ## LICENSE
 ```
-Copyright (C) 2017 Shinya Sakemoto
+Copyright (C) 2018 Shinya Sakemoto
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
