@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:alpine-3.6
+FROM frolvlad/alpine-glibc:alpine-3.8
 MAINTAINER Shinya Sakemoto <sakebook@gmail.com>
 
 RUN apk update && \
@@ -37,5 +37,5 @@ RUN mkdir -p $ANDROID_HOME/licenses/ && \
   echo "count=0" > ~/.android/repositories.cfg
 
 # install android tools and more
-RUN sdkmanager "tools" "build-tools;25.0.3" "platforms;android-25" "platform-tools" "extras;android;m2repository" && \
+RUN sdkmanager "tools" "build-tools;27.0.3" "platforms;android-27" "platform-tools" "extras;android;m2repository" && \
 sdkmanager --uninstall "patcher;v4" "emulator"
