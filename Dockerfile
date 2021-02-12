@@ -1,5 +1,5 @@
-FROM frolvlad/alpine-glibc:alpine-3.8
-MAINTAINER Shinya Sakemoto <sakebook@gmail.com>
+FROM frolvlad/alpine-glibc:alpine-3.13
+LABEL Shinya Sakemoto <sakebook@gmail.com>
 
 RUN apk update && \
   apk upgrade && \
@@ -18,24 +18,21 @@ RUN apk update && \
     libc-dev \
     wget
 
+ENV ANDROID_SDK_ROOT=/usr/local/sdk
+ENV CLI_TOOL_VERSION=commandlinetools-linux-6858069_latest
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
-ENV SDK_TOOL_VERSION=tools_r25.2.5-linux
-ENV ANDROID_HOME=/usr/local/android-sdk-linux
-ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+ENV PATH=$PATH:$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin
 
 # install android sdk
-RUN mkdir $ANDROID_HOME && \
-  wget "https://dl.google.com/android/repository/${SDK_TOOL_VERSION}.zip" && \
-  unzip -d $ANDROID_HOME $SDK_TOOL_VERSION.zip && \
-  rm -rf $SDK_TOOL_VERSION.zip
+RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools && \
+  wget "https://dl.google.com/android/repository/${CLI_TOOL_VERSION}.zip" && \
+  unzip -d $ANDROID_SDK_ROOT/cmdline-tools $CLI_TOOL_VERSION.zip && \
+  rm -rf $CLI_TOOL_VERSION.zip && \
+  mv $ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools/tools
 
 # prepare sdkmanager
-RUN mkdir -p $ANDROID_HOME/licenses/ && \
-  echo -e "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > $ANDROID_HOME/licenses/android-sdk-license && \
-  echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-preview-license && \
-  mkdir ~/.android && \
-  echo "count=0" > ~/.android/repositories.cfg
+RUN yes | sdkmanager --licenses
 
 # install android tools and more
-RUN sdkmanager "tools" "build-tools;27.0.3" "platforms;android-27" "platform-tools" "extras;android;m2repository" && \
+RUN sdkmanager "tools" "build-tools;30.0.2" "platforms;android-30" "platform-tools" "extras;android;m2repository" && \
 sdkmanager --uninstall "patcher;v4" "emulator"

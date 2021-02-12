@@ -6,11 +6,10 @@ Android development environment on Alpine using Docker
 
   Path                        | Version | Description                    | Location
   -------                     | ------- | -------                        | -------
-  build-tools;27.0.3          | 27.0.3  | Android SDK Build-Tools 27.0.3 | build-tools/27.0.3/
+  build-tools;30.0.2          | 30.0.2  | Android SDK Build-Tools 30.0.2 | build-tools/30.0.2/
   extras;android;m2repository | 47.0.0  | Android Support Repository     | extras/android/m2repository/
-  platform-tools              | 28.0.0  | Android SDK Platform-Tools     | platform-tools/
-  platforms;android-27        | 3       | Android SDK Platform 27        | platforms/android-27/
-  tools                       | 26.1.1  | Android SDK Tools              | tools/
+  platform-tools              | 30.0.5  | Android SDK Platform-Tools     | platform-tools/
+  platforms;android-30        | 3       | Android SDK Platform 30        | platforms/android-30/
 
 
 ### Others
@@ -32,8 +31,8 @@ Android development environment on Alpine using Docker
 ```
 $ git clone git@github.com:sakebook/docker-android-alpine.git
 $ cd docker-android-alpine
-$ docker build -t docker-android-alpine:27.0.3 .
-$ docker run -it docker-android-alpine:27.0.3 /bin/sh
+$ docker build -t docker-android-alpine:30.0.2 .
+$ docker run -it docker-android-alpine:30.0.2 /bin/sh
 ```
 
 ## Include docker images
